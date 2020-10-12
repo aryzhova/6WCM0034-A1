@@ -4,16 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <title>assignement 1</title>
+	<title>assignement 1</title>
+	
+
+	<style>
+		.bs-example{
+			margin: 20px;
+		}
+		.accordion .fa{
+			margin-right: 0.5rem;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			// Add minus icon for collapse element which is open by default
+			$(".collapse.show").each(function(){
+				$(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+			});
+			
+			// Toggle plus minus icon on show hide of collapse element
+			$(".collapse").on('show.bs.collapse', function(){
+				$(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+			}).on('hide.bs.collapse', function(){
+				$(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+			});
+		});
+	</script>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-		
+  
+  <body class="bg-light">
+	<nav class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
@@ -22,7 +47,7 @@
 			<li class="nav-item">
 			  <a class="nav-link" href="../index.html">Goal of this App</span></a>
 			</li>
-			<li class="nav-item active">
+			<li class="nav-item">
 			  <a class="nav-link" href="user_stories1.html">User Stories<span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
@@ -31,14 +56,73 @@
 			<li class="nav-item">
 				<a class="nav-link" href="compare.html">Comparison with existing apps</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="#">Technical Challenges</a>
 			</li>
 		  </ul>
 		</div>
-      </nav>
+    </nav>
 
-      <h4 class="mx-auto pb-4" style="width: 150px;" >Technical Challenges</h4>
-        <p>Soon to come...</p>
+	  <h4 class="mx-auto pb-4" style="width: 250px;" >Technical Challenges</h4>
+	  	<div class="pl-4 pr-4">
+			<p>Application will be built using the following technologies:</p>
+			<div class="bs-example">
+				<div class="accordion" id="accordionExample">
+					<div class="card">
+						<div class="card-header" id="headingOne">
+							<h2 class="mb-0">
+								<button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"><i class="fa fa-plus"></i> HTML & CSS</button>									
+							</h2>
+						</div>
+						<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+							<div class="card-body">
+								<p>HTML and CSS will be used to design page layout and its styles. I'm quite confident in my HTML/CSS skills.</p>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="headingTwo">
+							<h2 class="mb-0">
+								<button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i> Angular/Ionic</button>
+							</h2>
+						</div>
+						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+							<div class="card-body">
+								<p>I'm choosing this route, because I have some prior experience building single page applications, and I think
+									Angular is a super powerful framework for building cross-platform mobile applications.</p>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="headingThree">
+							<h2 class="mb-0">
+								<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"><i class="fa fa-plus"></i>Firebase</button>                     
+							</h2>
+						</div>
+						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+							<div class="card-body">
+								<p>I have some prior experience with both SQL and no-SQL databases, and I think 
+									Firebase will be most suitable for storing user data and handling 
+									authentication in this application.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+ 		 <p>Based on the technologies mentioned above, we are going to face the following challeges:</p>
+			<ul>
+				<li>
+					Passing data between Angular components
+				</li>
+				<li>
+					Saving state 
+				</li>
+				<li>
+					Writing user data to Firebase
+				</li>
+				<li>
+					Implementing user authencation
+				</li>
+			</ul>
        </div>
   </body>
