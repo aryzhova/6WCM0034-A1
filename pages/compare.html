@@ -3,13 +3,39 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../CSS/compare.css">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <title>assignement 1</title>
+	<title>assignement 1</title>
+
+	<script>
+		function zoomIn(event){
+				  // Get the modal
+			  var modal = document.getElementById("myModal");
+
+			  // Get the image and insert it inside the modal - use its "alt" text as a caption
+			  var img = event.target.id; //myImg
+			  var modalImg = document.getElementById("img01");
+			  var captionText = document.getElementById("caption");
+
+			  modal.style.display = "block";
+			  modalImg.src = event.target.src;
+			  //captionText.innerHTML = this.alt;
+
+			  // Get the <span> element that closes the modal
+			  var span = document.getElementsByClassName("close")[0];
+
+			  // When the user clicks on <span> (x), close the modal
+			  span.onclick = function() {
+			  modal.style.display = "none";
+			  }
+		}
+  </script>
+	
   </head>
   <body class="bg-light">
 	<nav class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
@@ -38,38 +64,72 @@
 		</div>
 	  </nav>
 	  
-	  <h4 class="mx-auto" style="width: 300px;" >Comparing Recipe Finder with Existing Applications</h4>
+	  <h4 class="mx-auto" style="width: 300px;" >Comparing 'AllRecipes' with Existing Applications</h4>
 	  <div class="ml-2 mr-2">
-		   <p>
-				The section below compares the Recipe Finder with other applications available on Google Play Store.</br>
+		   <p style="font-size: large;">
+				The section below compares 'All Recipes' with other applications available on Google Play Store.</br>
 				<h5>Cook Pad</i></h5>
 				<h6>Advantages of CookPad</h6>
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+					<span class="close">&times;</span>
+					<img class="modal-content" id="img01">
+					<div id="caption"></div>
+				</div>
+				
 				<div class=" pr-4">
-					<img src="../images/" class="rounded float-right" alt="image for persona">
+					<img id="myImg" class="rounded float-right" src="../images/cp1.jpg" style="width:50%;max-width:120px" onclick='zoomIn(event)'>
 				</div>
 				<div class="pl-4 ml-4 pr-4">
-					<p class="mb-1"><span class="font-weight-bold">Browsing recipes by categories</p>
+					<p class="mb-1">Browsing recipes by categories</p>
 				</div>
-					<ul>
-						<li></li>
-						<li>Social network apsect of the application:</li>
-							<p>Messaging system between the users</p>
-							<p>Likes/thumbs up</p>
-							<p>Can follow other users</p>
-						<li>Can upload cooksnaps to the recipes you've cooked</li>
-						<li>Can see the number of views of your own recipes</li>
-					</ul>
-				<h6>Disadvantages of CookPad</h6>
-					<ul>
+
+				<div class=" pr-4" style="clear: both;">
+					<img id="myImg1" class="rounded float-right" src="../images/cp2.jpg" style="width:50%;max-width:120px" onclick='zoomIn(event)'>
+				</div>
+				<div class="pl-4 ml-4 pr-4">
+					<p class="mb-1">Browsing recipes by categories</p>
+				</div>
+
+				<div class=" pr-4" style="clear: both;">
+					<img id="myImg2" class="rounded float-right" src="../images/cp3.jpg" style="width:50%;max-width:120px" onclick='zoomIn(event)'>
+				</div>
+				<div class="pl-4 ml-4 pr-4">
+					<p class="mb-1">Likes/emogjis</p>
+				</div>
+
+				<div class=" pr-4" style="clear: both;">
+					<img id="myImg3" class="rounded float-right" src="../images/cp4.jpg" style="width:50%;max-width:120px" onclick='zoomIn(event)'>
+				</div>
+				<div class="pl-4 ml-4 pr-4">
+					<p class="mb-1">Can follow other users</p>
+				</div>
+
+				<div class=" pr-4" style="clear: both;">
+					<img id="myImg3" class="rounded float-right" src="../images/cp5.jpg" style="width:50%;max-width:120px" onclick='zoomIn(event)'>
+				</div>
+				<div class="pl-4 ml-4 pr-4">
+					<p class="mb-1">Can upload cooksnaps to the recipes you've cooked</p>
+				</div>
+
+				<div class=" pr-4" style="clear: both;">
+					<img id="myImg3" class="rounded float-right" src="../images/cp6.jpg" style="width:50%;max-width:120px" onclick='zoomIn(event)'>
+				</div>
+				<div class="pl-4 ml-4 pr-4">
+					<p class="mb-1">Can see the number of views of your own recipes</p>
+				</div>
+
+				<h6 style="clear: both;">Disadvantages of CookPad</h6>
+					<ul style="font-size: large;">
 						<li>No shopping list option</li>
 						<li>No option to search by the ingredient</li>
-						<li>Too much functionality and social networking might be distracting from what the recipe is intended for</li>
+						<li>Too much functionality and social networking aspect might be distracting from what the recipe is intended for</li>
 					</ul>
 				 
 		   </p>
 	  </div>
 	 
-	
+	 
    
   </body>
 </html>
